@@ -9,15 +9,15 @@ class User(db.Model):
     posts = db.relationship('Post', backref='author', lazy='dynamic')
 
     def __repr__(self):
-        return '<User %r>' % (self.nickname)
+        return '<User %r>' % self.nickname
 
 
-class Posts(db.Model):
+class Post(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.String(140))
-    time_stamp = db.Column(db.DateTime)
+    timestamp = db.Column(db.DateTime)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     def __repr__(self):
-        return '<Post %r>' % (self.body)
+        return '<Post %r>' % self.body

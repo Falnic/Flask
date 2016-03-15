@@ -1,0 +1,5 @@
+flask
+.idea
+.git
+app/__pycache__
+*.pyc
